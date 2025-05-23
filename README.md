@@ -2,10 +2,9 @@
 
 UASPL es un acrónimo recursivo como el del proyecto GNU (GNU's No Unix) por lo que UASPL significa: UASPL Automatizado para la Seguridad y la Protección de Linux.
 
-# ¿Ayuda y Uso?
+# Ayuda y Uso
 
-Dependencias que se deben instalar: clamav, ufw, rkhunter. El programa no los instala él mismo.
-En el código hay comentarios que ayudan a entender porque algo esta ahí y no simplemente es adorno.
+Dentro del programa hay comentarios y mensajes que ayudan a entender el funcionamiento y uso, además como este programa fue creado con un enfoque para el sistema operativo Arch Linux hay una página en la Wiki de Arch dedicada a explicar el funcionamiento de UASPL: [UASPL en Arch Wiki](https://wiki.archlinux.org/title/Uaspl-bin)
 
 # Modo Gráfico
 
