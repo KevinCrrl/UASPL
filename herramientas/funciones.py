@@ -14,13 +14,22 @@
     Debería haber recibido una copia de la Licencia Pública General GNU
     junto con este programa. Si no, consulte <https://www.gnu.org/licenses/>."""
 
+import pyfiglet
 import subprocess as sb
-from herramientas.printlet import color
+from herramientas.idioma import palabras
+from colorama import init, Fore
+
+init(autoreset=True) # Esto hace que la consola no quede toda del color que seleccioné para una sola línea. 
+
+def color(texto):
+    print(Fore.GREEN + pyfiglet.figlet_format(texto, "slant"))
 
 def daemon():
-    color("Activar ClamAV")
-    # Aquí se ejecuta un comando usando shell=True porque es comando fijo y no ingresado por el usuario, así evito que nadie ingrese comandos malintencionados.
-    sb.run("sudo systemctl enable clamav-daemon --now && sudo systemctl start clamav-daemon --now", shell=True)
+    color(palabras["ac"])
+    servicios = ["clamav-daemon", "clamav-clamonacc", "clamav-freshclam"]
+    for servicio in servicios:
+        # Aquí se ejecutan comandos usando shell=True porque es comando fijo y no ingresado por el usuario, así evito que nadie ingrese comandos malintencionados.
+        sb.run(f"sudo systemctl enable --now {servicio}", shell=True)
 
 
 def firewall():
@@ -28,10 +37,10 @@ def firewall():
     sb.run(["sudo", "ufw", "status", "verbose"])
 
 def rkescaneo():
-    color("RKHUNTER Escaneo")
-    print("Actualizando bases de datos...\n")
+    color(palabras["re"])
+    print(palabras["ac1"])
     sb.run(["sudo", "rkhunter", "--update"])
-    print("Actualizando base local de propiedades...\n")
+    print(palabras["ac2"])
     sb.run(["sudo", "rkhunter", "--propupd"])
-    print("Ejecutando análisis completo...\n")
+    print(palabras["an1"])
     sb.run(["sudo", "rkhunter", "--check"])
