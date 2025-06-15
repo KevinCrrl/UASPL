@@ -1,8 +1,9 @@
+from xdg.BaseDirectory import xdg_config_home
 import json
 import os
 
-ruta = os.path.expanduser("~/.config/uaspl/config.json") # Esto permite que Python entienda que ~ es la carpeta del usuario, así el programa no tiene que andar adivinando como se llama la carpeta del usuario
-if os.path.exists(ruta): # Verifico que la ruta exista porque si no existe y el programa asume que está, da error y adiós inicio del programa
+ruta = os.path.join(xdg_config_home, "uaspl", "config.json")
+if os.path.exists(ruta): # Verifico que la ruta exista porque si no existe y el programa asume que está, da error y el programa no inicia.
     with open(ruta, "r", encoding="utf-8") as archivo:
         idioma = json.load(archivo)
 

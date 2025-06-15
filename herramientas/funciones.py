@@ -24,13 +24,18 @@ init(autoreset=True) # Esto hace que la consola no quede toda del color que sele
 def color(texto):
     print(Fore.GREEN + pyfiglet.figlet_format(texto, "slant"))
 
+def ayuda():
+    print(palabras["me2"])
+
+def version():
+    print(palabras["version"])
+
 def daemon():
     color(palabras["ac"])
     servicios = ["clamav-daemon", "clamav-clamonacc", "clamav-freshclam"]
     for servicio in servicios:
         # Aquí se ejecutan comandos usando shell=True porque es comando fijo y no ingresado por el usuario, así evito que nadie ingrese comandos malintencionados.
         sb.run(f"sudo systemctl enable --now {servicio}", shell=True)
-
 
 def firewall():
     color("UFW Status")

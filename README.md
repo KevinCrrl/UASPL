@@ -2,10 +2,10 @@
 
 UASPL es un acrónimo recursivo como el del proyecto GNU (GNU's No Unix) por lo que UASPL significa: UASPL Automatizado para la Seguridad y la Protección de Linux.
 
-# ¿Ayuda y Uso?
+# Ayuda y Uso
 
-Dependencias que se deben instalar: clamav, ufw, rkhunter. El programa no los instala él mismo.
-En el código hay comentarios que ayudan a entender porque algo esta ahí y no simplemente es adorno.
+Dependencias que se deben instalar: clamav, ufw, rkhunter. El programa no los instala él mismo debido a que se debería manejar cada gestor de paquetes de cada distro.
+En el código hay comentarios que ayudan a entender porque algo esta ahí y no simplemente es adorno, además que hay documentación en una url enlazada dentro del programa.
 
 # Modo Gráfico
 

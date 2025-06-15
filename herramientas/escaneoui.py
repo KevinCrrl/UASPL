@@ -24,7 +24,6 @@ from colorama import Fore
 def ventana():
     def escaneo():
         ruta = entrada.get()
-        vent.destroy() # uso destroy porque una vez acabe el comando si la ventana sigue ahí, es un estorbo para la otra interfaz.
         color(palabras["ti1"])
         print(palabras["ti2"])
         sleep(3)

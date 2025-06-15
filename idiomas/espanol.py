@@ -1,6 +1,7 @@
 palabras = {
     "demonio": "activar",
     "red": "red-estado",
+    "ayuda": "ayuda",
     "ti1": "ClamAV Escaneo",
     "ti2": "------------- Actualizando Bases de Datos -------------\n",
     "ti3": "----------------- Empezando Escaneo -------------------\n",
@@ -12,6 +13,7 @@ palabras = {
     "firewall": "Reglas UFW",
     "rkescaneo": "RKESCANEO",
     "regla": "Nueva Regla UFW",
+    "version": "UASPL Versión 1.2.0",
     "ti4": "Menú de UASPL:",
     "ac": "Activar ClamAV",
     "re": "RKHUNTER Escaneo",
@@ -21,12 +23,13 @@ palabras = {
     "ad1": "No se ingresó ningún argumento.",
     "bu2": "Añadir Regla",
     "ti5": "UFW Regla",
-    "me1": """Argumento no encontrado
-Argumentos disponibles:
+    "me1": "Argumento no encontrado, use el argumento 'ayuda' para ver los comandos disponibles.",
+    "me2": """Argumentos disponibles:
 activar: Activa el daemon de ClamAV.
 red-estado: Consulta y muestra el estado y las reglas del firewall UFW.
 anti-rk: Realiza un escaneo en busca de modificaciones malintencionadas y rootkits.
-modo-ui: Activa la interfaz gráfica del programa, aún así se necesita de la terminal para ver las salidas de los comandos.
+modo-gui: Activa la interfaz gráfica del programa, aún así se necesita de la terminal para ver las salidas de los comandos.
+version: Muestra la versión que se está usando de UASPL.
 
 Si se desea realizar un escaneo antivirus con ClamAV, se debe usar el modo gráfico para dar la ruta a escanear.""",
 }

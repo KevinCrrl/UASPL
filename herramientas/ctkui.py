@@ -36,7 +36,7 @@ def ui():
     texto = ctk.CTkLabel(root, text=palabras["ti4"])
     texto.pack()
 
-    for nombre, funcion in nombres.items(): # for y dict usado para no tener que estar reescribiendo la función CTkButton para crear tantos botones como si no existiese el Don't Repeat Yourself.
+    for nombre, funcion in nombres.items(): # for y dict usado para no tener que estar reescribiendo la función CTkButton para crear tantos botones (DRY)
         boton = ctk.CTkButton(root, text=nombre, command=funcion)
         boton.pack(pady=5)
 

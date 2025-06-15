@@ -25,7 +25,6 @@ def ventanaufw():
         regla = entrada.get()
         color(palabras["ti5"])
         sb.run(["sudo", "ufw"] + regla.split())
-        ufwui.destroy() # uso destroy porque una vez acabe el comando si la ventana sigue ahí, es un estorbo para la otra interfaz.
 
     ufwui = ctk.CTk()
     ufwui.title(palabras["ti1"])
