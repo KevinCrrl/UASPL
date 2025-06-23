@@ -17,6 +17,7 @@
 import pyfiglet
 import subprocess as sb
 from herramientas.idioma import palabras
+from herramientas.statusui import ventana
 from colorama import init, Fore
 
 init(autoreset=True) # Esto hace que la consola no quede toda del color que seleccioné para una sola línea. 
@@ -39,7 +40,8 @@ def daemon():
 
 def firewall():
     color("UFW Status")
-    sb.run(["sudo", "ufw", "status", "verbose"])
+    output = sb.run(["pkexec", "ufw", "status", "verbose"], capture_output=True)
+    ventana(output.stdout)
 
 def rkescaneo():
     color(palabras["re"])

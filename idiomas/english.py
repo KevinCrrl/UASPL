@@ -13,7 +13,7 @@ palabras = {
     "firewall": "UFW Rules",
     "rkescaneo": "RKSCAN",
     "regla": "New Rule UFW",
-    "version": "UASPL Version 1.2.0",
+    "version": "UASPL Version 1.2.1",
     "ti4": "UASPL Menu:",
     "ac": "Activate ClamAV",
     "re": "RKHUNTER Scan",
