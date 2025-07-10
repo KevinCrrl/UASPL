@@ -1,0 +1,5 @@
+.pycharm*/
+__pycache__/
+dist/
+build/
+UASPL.spec
