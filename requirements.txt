@@ -1,0 +1,4 @@
+colorama
+customtkinter
+pyxdg
+pyfiglet
