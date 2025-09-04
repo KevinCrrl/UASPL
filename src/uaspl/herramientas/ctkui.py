@@ -18,13 +18,13 @@ import customtkinter as ctk
 from herramientas.escaneoui import ventana
 from herramientas.ufwui import ventanaufw
 from herramientas.funciones import *
-from herramientas.idioma import palabras
+from herramientas.idioma import traductor
 
 nombres = {
-    palabras["ventana"]: ventana,
-    palabras["firewall"]: firewall,
-    palabras["rkescaneo"]: rkescaneo,
-    palabras["regla"]: ventanaufw
+    traductor("Escaneo ClamAV"): ventana,
+    traductor("Reglas UFW"): firewall,
+    traductor("RKESCANEO"): rkescaneo,
+    traductor("Nueva Regla UFW"): ventanaufw
 }
 
 def ui():
@@ -33,7 +33,7 @@ def ui():
     root.geometry("300x200")
     root.resizable(False, False)
 
-    texto = ctk.CTkLabel(root, text=palabras["ti4"])
+    texto = ctk.CTkLabel(root, text=traductor("Menú de UASPL:"))
     texto.pack()
 
     for nombre, funcion in nombres.items(): # for y dict usado para no tener que estar reescribiendo la función CTkButton para crear tantos botones (DRY)

@@ -14,33 +14,30 @@
     Debería haber recibido una copia de la Licencia Pública General GNU
     junto con este programa. Si no, consulte <https://www.gnu.org/licenses/>."""
 
-from tkinter import LEFT
-import customtkinter as ctk 
-import subprocess as sb
-from herramientas.funciones import color
-from herramientas.idioma import palabras
+import customtkinter as ctk
+from herramientas.idioma import traductor
+from herramientas.gterminal import GTerminal
 
 def ventanaufw():
     def nueva_regla():
         regla = entrada.get()
-        color(palabras["ti5"])
-        sb.run(["sudo", "ufw"] + regla.split())
+        GTerminal(traductor("UFW Regla"), ["pkexec", "ufw"] + regla.split(), False).crear_interfaz()
 
     ufwui = ctk.CTk()
-    ufwui.title(palabras["ti1"])
+    ufwui.title(traductor("UFW Regla"))
     ufwui.geometry("280x100")
     ufwui.resizable(False, False)
 
     doble = ctk.CTkFrame(ufwui, width=260, height=30)
     doble.pack(pady=3)
 
-    texto1 = ctk.CTkLabel(doble, text="sudo ufw")
-    texto1.pack(side=LEFT)
+    texto1 = ctk.CTkLabel(doble, text="pkexec ufw")
+    texto1.pack(side="left")
 
     entrada = ctk.CTkEntry(doble)
-    entrada.pack(side=LEFT)
+    entrada.pack(side="left")
 
-    boton1 = ctk.CTkButton(ufwui, text=palabras["bu2"], command=nueva_regla)
+    boton1 = ctk.CTkButton(ufwui, text=traductor("Añadir Regla"), command=nueva_regla)
     boton1.pack(pady=3)
 
     ufwui.mainloop()

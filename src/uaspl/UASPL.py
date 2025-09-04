@@ -14,18 +14,28 @@
     Debería haber recibido una copia de la Licencia Pública General GNU
     junto con este programa. Si no, consulte <https://www.gnu.org/licenses/>."""
 
-from herramientas.idioma import palabras
-from herramientas.funciones import *
+import customtkinter as ctk
+from config.parser import config
+from herramientas.funciones import * # Esto también importa la función traductor()
 from herramientas.ctkui import ui
 import sys
 
+# Definir tema para todas las interfaces desde el inicio
+ctk.set_appearance_mode(config["tema"])
+
 args = {
-    palabras["demonio"]: daemon,
-    palabras["red"]: firewall,
+    traductor("red-estado"): firewall,
     "anti-rk": rkescaneo,
-    palabras["grafico"]: ui,
-    palabras["ayuda"]: ayuda,
+    traductor("modo-gui"): ui,
+    traductor("ayuda"): ayuda,
     "version": version,
+    traductor("full-iniciar-servicios"): Servicio("enable --now").systemctl,
+    traductor("full-detener-servicios"): Servicio("disable --now").systemctl,
+    traductor("estado-servicios"): Servicio("status").systemctl,
+    traductor("detener-servicios"): Servicio("stop").systemctl,
+    traductor("iniciar-servicios"): Servicio("start").systemctl,
+    traductor("activar-servicios"): Servicio("enable").systemctl,
+    traductor("desactivar-servicios"): Servicio("disable").systemctl,
 }
 
 def main():
@@ -36,9 +46,11 @@ def main():
                 break # break para que cuando encuentre la función que no itere más y termine dando comportamientos raros en la consola.
     
         else: # else aquí y no dentro del bucle for porque sino al no encontrar el argumento el aviso del print termina saliendo más de una vez.
-            print(palabras["me1"])
+            print(traductor("Argumento no encontrado, use el argumento 'ayuda' para ver los comandos disponibles."))
     except IndexError: # Aquí controlo el error de que se ejecute el programa sin ingresar ni un solo argumento, se debe pasar un argumento siempre.
-        print(palabras["ad1"])
+        print(traductor("No se ingresó ningún argumento."))
+    except KeyboardInterrupt as e:
+        print(e)
 
 if __name__ == "__main__":
     main()

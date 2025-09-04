@@ -15,36 +15,26 @@
     junto con este programa. Si no, consulte <https://www.gnu.org/licenses/>."""
 
 import customtkinter as ctk 
-import subprocess as sb
-from time import sleep
-from herramientas.funciones import color
-from herramientas.idioma import palabras
-from colorama import Fore
+from herramientas.idioma import traductor
+from herramientas.gterminal import GTerminal
 
 def ventana():
     def escaneo():
         ruta = entrada.get()
-        color(palabras["ti1"])
-        print(palabras["ti2"])
-        sleep(3)
-        sb.run(["sudo", "freshclam"])
-        print(palabras["ti3"])
-        sleep(3)
-        sb.run(["sudo", "clamscan", ruta]) # sin shell=True porque aquí si se maneja una entrada de usuario y peor aún con sudo que es el riesgo total de todo Linux.
-        print(Fore.BLUE + palabras["final"])
+        GTerminal(traductor("ClamAV Escaneo"), ["pkexec", "uasplc", "clam", ruta], True).crear_interfaz()
 
     vent = ctk.CTk()
-    vent.title(palabras["ti1"])
+    vent.title(traductor("ClamAV Escaneo"))
     vent.geometry("220x120")
     vent.resizable(False, False)
 
-    texto1 = ctk.CTkLabel(vent, text=palabras["gr1"])
+    texto1 = ctk.CTkLabel(vent, text=traductor("Ingresa la ruta a escanear:"))
     texto1.pack()
 
     entrada = ctk.CTkEntry(vent)
     entrada.pack(pady=5)
 
-    boton1 = ctk.CTkButton(vent, text=palabras["bu1"], command=escaneo)
+    boton1 = ctk.CTkButton(vent, text=traductor("Escanear"), command=escaneo)
     boton1.pack()
 
     vent.mainloop()
