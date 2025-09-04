@@ -28,13 +28,17 @@ args = {
     "version": version,
 }
 
-try:
-    for arg, funcion in args.items():
-        if sys.argv[1] == arg:
-            funcion()
-            break # break para que cuando encuentre la función que no itere más y termine dando comportamientos raros en la consola.
+def main():
+    try:
+        for arg, funcion in args.items():
+            if sys.argv[1] == arg:
+                funcion()
+                break # break para que cuando encuentre la función que no itere más y termine dando comportamientos raros en la consola.
     
-    else: # else aquí y no dentro del bucle for porque sino al no encontrar el argumento el aviso del print termina saliendo más de una vez.
-        print(palabras["me1"])
-except IndexError: # Aquí controlo el error de que se ejecute el programa sin ingresar ni un solo argumento, se debe pasar un argumento siempre.
-    print(palabras["ad1"])
+        else: # else aquí y no dentro del bucle for porque sino al no encontrar el argumento el aviso del print termina saliendo más de una vez.
+            print(palabras["me1"])
+    except IndexError: # Aquí controlo el error de que se ejecute el programa sin ingresar ni un solo argumento, se debe pasar un argumento siempre.
+        print(palabras["ad1"])
+
+if __name__ == "__main__":
+    main()
