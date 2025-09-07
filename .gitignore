@@ -5,8 +5,4 @@ dist/
 build/
 uaspl_env/
 UASPL.spec
-**.pkg.tar.zst
-PKGBUILD
-.SRCINFO
-uaspl.egg-info
-pkg
+eicar.txt
