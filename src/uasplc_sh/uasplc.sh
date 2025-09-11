@@ -6,6 +6,10 @@
 # Este archivo se puede usar de manera individual o junto a UASPL (Para ser usado por UASPL se debe ubicar este archivo en /usr/bin con el nombre uasplc sin extensión)
 # No lleva la licencia GPLv3 de UASPL ya que UASPL lo llama a través de subprocess.Popen, por ende no aplica el copyleft, además su creador (KevinCrrl) considera la licencia MIT más apta para un script pequeño como este.
 
+set -u
+set -e
+set -x
+
 clam() {
     case "$1" in
         /|~|/*|~/*)
