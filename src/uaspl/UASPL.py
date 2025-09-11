@@ -26,7 +26,7 @@ ctk.set_appearance_mode(config["tema"])
 args = {
     traductor("red-estado"): firewall,
     "anti-rk": rkescaneo,
-    traductor("modo-gui"): ui,
+    "gui": ui,
     traductor("ayuda"): ayuda,
     "version": version,
     traductor("full-iniciar-servicios"): Servicio("enable --now").systemctl,

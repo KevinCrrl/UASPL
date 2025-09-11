@@ -11,7 +11,6 @@ frases = {
     "ClamAV Escaneo": "ClamAV Scan",
     "Ingresa la ruta a escanear:": "Enter the path to scan:",
     "Escanear": "Scan",
-    "modo-gui": "gui-mode",
     "Reglas UFW": "UFW Rules",
     "RKESCANEO": "RKSCAN",
     "Nueva Regla UFW": "New Rule UFW",
@@ -31,7 +30,7 @@ frases = {
     """Argumentos disponibles:
 red-estado: Consulta y muestra el estado y las reglas del firewall UFW en una interfaz gráfica.
 anti-rk: Realiza un escaneo en busca de modificaciones malintencionadas y rootkits en una interfaz gráfica.
-modo-gui: Muestra el menú principal del programa donde se pueden llamar otras interfaces.
+gui: Muestra el menú principal del programa donde se pueden llamar otras interfaces.
 version: Muestra la versión que se está usando de UASPL.
 full-iniciar-servicios: Activa e inicia inmediatamente los servicios de ClamAV.
 full-detener-servicios: Desactiva y detiene inmediatamente los servicios de ClamAV.
@@ -49,7 +48,7 @@ Use el programa uasplc (no integrado directamente en UASPL, pero sí desarrollad
 """Available arguments:
 network-state: Checks and displays the status and rules of the UFW firewall in a graphical interface.
 anti-rk: Performs a scan for malicious modifications and rootkits in a graphical interface.
-gui-mode: Shows the main menu of the program where other interfaces can be called.
+gui: Shows the main menu of the program where other interfaces can be called.
 version: Displays the version of UASPL being used.
 full-start-services: Enables and immediately starts the ClamAV services.
 full-stop-services: Disables and immediately stops the ClamAV services.
