@@ -21,7 +21,7 @@ from herramientas.gterminal import GTerminal
 def ventana():
     def escaneo():
         ruta = entrada.get()
-        GTerminal(traductor("ClamAV Escaneo"), ["pkexec", "uasplc", "clam", ruta], True).crear_interfaz()
+        GTerminal(traductor("ClamAV Escaneo"), ["pkexec", "sh", "uasplc", "clam", ruta], True).crear_interfaz()
 
     vent = ctk.CTk()
     vent.title(traductor("ClamAV Escaneo"))

@@ -58,4 +58,4 @@ def firewall():
     GTerminal("UFW Status", ["pkexec", "ufw", "status", "verbose"], False).crear_interfaz()
 
 def rkescaneo():
-    GTerminal("RKHUNTER", ["pkexec", "uasplc", "rk"], False).crear_interfaz()
+    GTerminal("RKHUNTER", ["pkexec", "sh", "uasplc", "rk"], False).crear_interfaz()

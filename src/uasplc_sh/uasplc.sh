@@ -8,7 +8,6 @@
 
 set -u
 set -e
-set -x
 
 clam() {
     case "$1" in
