@@ -52,7 +52,7 @@ Si se desea realizar un escaneo antivirus con ClamAV, se debe usar el modo gráf
 Use el programa uasplc (no integrado directamente en UASPL, pero sí desarrollado en conjunto bajo distintas licencias) para ejecutar escaneos en la terminal."""))
 
 def version():
-    print(traductor("UASPL Versión 2.0.0-beta1"))
+    print(traductor("UASPL Versión 2.0.1-beta"))
 
 def firewall():
     GTerminal("UFW Status", ["pkexec", "ufw", "status", "verbose"], False).crear_interfaz()
