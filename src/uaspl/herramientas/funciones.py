@@ -18,6 +18,7 @@ import subprocess as sb
 from herramientas.idioma import traductor
 from herramientas.gterminal import GTerminal
 from colorama import init, Fore
+import customtkinter as ctk
 
 init(autoreset=True) # Esto hace que la consola no quede toda del color que seleccioné para una sola línea. 
 
@@ -59,3 +60,7 @@ def firewall():
 
 def rkescaneo():
     GTerminal("RKHUNTER", ["pkexec", "sh", "uasplc", "rk"], False).crear_interfaz()
+
+def escaneo():
+    ruta = ctk.filedialog.askdirectory()
+    GTerminal(traductor("ClamAV Escaneo"), ["pkexec", "sh", "uasplc", "clam", ruta], True).crear_interfaz()

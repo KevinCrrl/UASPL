@@ -15,13 +15,12 @@
     junto con este programa. Si no, consulte <https://www.gnu.org/licenses/>."""
 
 import customtkinter as ctk
-from herramientas.escaneoui import ventana
 from herramientas.ufwui import ventanaufw
 from herramientas.funciones import *
 from herramientas.idioma import traductor
 
 nombres = {
-    traductor("Escaneo ClamAV"): ventana,
+    traductor("Escaneo ClamAV"): escaneo,
     traductor("Reglas UFW"): firewall,
     traductor("RKESCANEO"): rkescaneo,
     traductor("Nueva Regla UFW"): ventanaufw
