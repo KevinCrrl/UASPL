@@ -43,7 +43,7 @@ Si se desea realizar un escaneo antivirus con ClamAV, se debe usar el modo gráf
 Use el programa uasplc (no integrado directamente en UASPL, pero sí desarrollado en conjunto bajo distintas licencias) para ejecutar escaneos en la terminal.""":
 
 # ================= MENU DE AYUDA ==================================
-"""Available arguments:
+    """Available arguments:
 network-state: Checks and displays the status and rules of the UFW firewall in a graphical interface.
 anti-rk: Performs a scan for malicious modifications and rootkits in a graphical interface.
 gui: Shows the main menu of the program where other interfaces can be called.

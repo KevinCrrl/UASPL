@@ -38,7 +38,7 @@ def ayuda():
     print(traductor("""Argumentos disponibles:
 red-estado: Consulta y muestra el estado y las reglas del firewall UFW en una interfaz gráfica.
 anti-rk: Realiza un escaneo en busca de modificaciones malintencionadas y rootkits en una interfaz gráfica.
-modo-gui: Muestra el menú principal del programa donde se pueden llamar otras interfaces.
+gui: Muestra el menú principal del programa donde se pueden llamar otras interfaces.
 version: Muestra la versión que se está usando de UASPL.
 full-iniciar-servicios: Activa e inicia inmediatamente los servicios de ClamAV.
 full-detener-servicios: Desactiva y detiene inmediatamente los servicios de ClamAV.
