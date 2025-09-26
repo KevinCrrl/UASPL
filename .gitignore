@@ -6,3 +6,4 @@ build/
 uaspl_env/
 UASPL.spec
 eicar.txt
+uaspl.egg-info/
