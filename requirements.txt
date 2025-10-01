@@ -1,4 +1,4 @@
 colorama
 customtkinter
-pyxdg
-jsonschema
+pyxdg>=0.26
+jsonschema>=4.22.0
