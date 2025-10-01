@@ -30,7 +30,7 @@ class Servicio:
     def systemctl(self):
         for servicio in self.nombres:
             try:
-                sb.run(f"sudo systemctl {self.tipo} {servicio}", check=True, shell=True)
+                sb.run(["sudo", "systemctl"] + self.tipo.split() + [servicio], check=True)
             except sb.CalledProcessError:
                 print(Fore.RED + f"Error ocurrido durante el servicio {servicio}")
 
