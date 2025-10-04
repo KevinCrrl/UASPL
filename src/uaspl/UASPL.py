@@ -19,6 +19,12 @@ from config.parser import config
 from herramientas.funciones import * # Esto también importa la función traductor()
 from herramientas.ctkui import ui
 import sys
+import os
+
+# Verificar no-root antes que nada
+if os.getuid() == 0:
+    print(traductor("No use UASPL como root."))
+    sys.exit(1)
 
 # Definir tema para todas las interfaces desde el inicio
 ctk.set_appearance_mode(config["tema"])

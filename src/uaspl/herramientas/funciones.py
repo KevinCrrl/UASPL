@@ -78,7 +78,7 @@ def avisoctk(mensaje, parent=None):
         dialogo.mainloop()
 
 def version():
-    print(traductor("UASPL Versión 2.0.0-beta2"))
+    print(traductor("UASPL Versión 2.0.0-beta3"))
 
 def firewall():
     GTerminal("UFW Status", ["pkexec", "ufw", "status", "verbose"], False).crear_interfaz()
@@ -88,4 +88,7 @@ def rkescaneo():
 
 def escaneo():
     ruta = ctk.filedialog.askdirectory()
-    GTerminal(traductor("ClamAV Escaneo"), ["pkexec", "sh", "uasplc", "clam", ruta], True).crear_interfaz()
+    if ruta == ():  # askdirectory() retorna una tupla cuando se cancela la acción
+        avisoctk("No se ingresó ninguna ruta.")
+    else:
+        GTerminal(traductor("ClamAV Escaneo"), ["pkexec", "sh", "uasplc", "clam", ruta], True).crear_interfaz()

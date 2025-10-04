@@ -13,7 +13,7 @@ frases = {
     "RKESCANEO": "RKSCAN",
     "Nueva Regla UFW": "New Rule UFW",
     "Escaneo ClamAV": "ClamAV Scan",
-    "UASPL Versión 2.0.0-beta2": "UASPL Version 2.0.0-beta2",
+    "UASPL Versión 2.0.0-beta3": "UASPL Version 2.0.0-beta3",
     "Menú de UASPL:": "UASPL Menu:",
     "No se ingresó ningún argumento.": "No argument was entered.",
     "Añadir Regla": "Add Rule",
@@ -26,6 +26,8 @@ frases = {
     "Mis Extensiones": "My Extensions",
     "Aviso de UASPL": "UASPL Notice",
     "No existe el archivo de extensiones.": "The extensions file does not exist.",
+    "No use UASPL como root.": "Do not use UASPL as root.",
+    "No se ingresó ninguna ruta.": "No path was entered.",
 
 # ================= MENU DE AYUDA ==================================
     """Argumentos disponibles:

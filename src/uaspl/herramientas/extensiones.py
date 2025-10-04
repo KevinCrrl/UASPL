@@ -26,6 +26,7 @@ def ventana_extensiones():
     ruta_config_extensiones = os.path.join(xdg_config_home, "uaspl", "extensiones.txt")
 
     if os.path.exists(ruta_config_extensiones):
+        # Minima protección para evitar extensiones no deseadas
         with open(ruta_config_extensiones, "r", encoding="utf-8") as extensiones:
             lista = extensiones.read()
 
