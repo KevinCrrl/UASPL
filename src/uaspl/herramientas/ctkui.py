@@ -15,6 +15,7 @@
     junto con este programa. Si no, consulte <https://www.gnu.org/licenses/>."""
 
 import customtkinter as ctk
+from herramientas.extensiones import ventana_extensiones
 from herramientas.ufwui import ventanaufw
 from herramientas.funciones import *
 from herramientas.idioma import traductor
@@ -23,13 +24,14 @@ nombres = {
     traductor("Escaneo ClamAV"): escaneo,
     traductor("Reglas UFW"): firewall,
     traductor("RKESCANEO"): rkescaneo,
-    traductor("Nueva Regla UFW"): ventanaufw
+    traductor("Nueva Regla UFW"): ventanaufw,
+    traductor("Mis Extensiones"): ventana_extensiones
 }
 
 def ui():
     root = ctk.CTk()
     root.title("UASPL GUI")
-    root.geometry("300x200")
+    root.geometry("300x220")
     root.resizable(False, False)
 
     texto = ctk.CTkLabel(root, text=traductor("Menú de UASPL:"))

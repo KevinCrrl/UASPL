@@ -13,7 +13,7 @@ frases = {
     "RKESCANEO": "RKSCAN",
     "Nueva Regla UFW": "New Rule UFW",
     "Escaneo ClamAV": "ClamAV Scan",
-    "UASPL Versión 2.0.1-beta": "UASPL Version 2.0.1-beta",
+    "UASPL Versión 2.0.0-beta2": "UASPL Version 2.0.0-beta2",
     "Menú de UASPL:": "UASPL Menu:",
     "No se ingresó ningún argumento.": "No argument was entered.",
     "Añadir Regla": "Add Rule",
@@ -23,6 +23,9 @@ frases = {
     "Argumento no encontrado, use el argumento 'ayuda' para ver los comandos disponibles.": "Argument not found, use the 'help' argument to see avalaible commands.",
     "Seguro de que deseas eliminar todos los archivos detectados como maliciosos? (s/n): ": "Are you sure you want to delete all infected files? (y/n): ",
     "ERROR: NO SE PUDO ELIMINAR EL ARCHIVO:": "ERROR: COULD NOT DELETE THE FILE:",
+    "Mis Extensiones": "My Extensions",
+    "Aviso de UASPL": "UASPL Notice",
+    "No existe el archivo de extensiones.": "The extensions file does not exist.",
 
 # ================= MENU DE AYUDA ==================================
     """Argumentos disponibles:
