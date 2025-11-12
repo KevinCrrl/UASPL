@@ -16,6 +16,7 @@
 
 import customtkinter as ctk
 from herramientas.extensiones import ventana_extensiones
+from tkinter import PhotoImage
 from herramientas.ufwui import ventanaufw
 from herramientas.funciones import *
 from herramientas.idioma import traductor
@@ -31,6 +32,9 @@ nombres = {
 def ui():
     root = ctk.CTk()
     root.title("UASPL GUI")
+    # True para que sea el ícono en todas las demás ventanas
+    root.iconphoto(True, PhotoImage(file='/usr/share/icons/hicolor/48x48/apps/UASPL.png'))
+
     root.geometry("300x220")
     root.resizable(False, False)
 

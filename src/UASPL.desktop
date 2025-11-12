@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=UASPL
+Comment=Utilidad Automatizada para la Seguridad y Protección de Linux
+Exec=/usr/bin/uaspl gui
+Icon=/usr/share/icons/hicolor/48x48/apps/UASPL.png
+Terminal=false
+Type=Application
+Categories=System;
+StartupNotify=true
+
