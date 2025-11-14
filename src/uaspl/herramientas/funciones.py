@@ -15,6 +15,7 @@
     junto con este programa. Si no, consulte <https://www.gnu.org/licenses/>."""
 
 import subprocess as sb
+from herramientas.avisoctk import avisoctk
 from herramientas.idioma import traductor
 from herramientas.gterminal import GTerminal
 from colorama import init, Fore
@@ -51,31 +52,6 @@ desactivar-servicios: Desactiva los servicios de ClamAV para que no inicien con 
 Si se desea realizar un escaneo antivirus con ClamAV, se debe usar el modo gráfico para dar la ruta a escanear.
 
 Use el programa uasplc (no integrado directamente en UASPL, pero sí desarrollado en conjunto bajo distintas licencias) para ejecutar escaneos en la terminal."""))
-
-def avisoctk(mensaje, parent=None):
-    if parent:
-        dialogo = ctk.CTkToplevel(parent)
-        # Hacer la ventana modal respecto al parent
-        dialogo.transient(parent)
-        dialogo.grab_set()
-    else:
-        # Si no hay parent, crear una ventana raíz
-        dialogo = ctk.CTk()
-
-    dialogo.title(traductor("Aviso de UASPL"))
-    dialogo.geometry("350x150")
-    dialogo.resizable(False, False)
-
-    label = ctk.CTkLabel(dialogo, text=traductor(mensaje), wraplength=330)
-    label.pack(padx=20, pady=20, expand=True, fill="both")
-
-    boton = ctk.CTkButton(dialogo, text="Aceptar", command=dialogo.destroy)
-    boton.pack(pady=(0, 20))
-
-    if parent:
-        parent.wait_window(dialogo)
-    else:
-        dialogo.mainloop()
 
 def version():
     print(traductor("UASPL Versión 2.0.0-beta3"))

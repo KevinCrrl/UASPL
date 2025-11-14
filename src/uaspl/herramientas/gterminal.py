@@ -15,6 +15,8 @@
     junto con este programa. Si no, consulte <https://www.gnu.org/licenses/>."""
 
 from herramientas.idioma import traductor
+from herramientas.confirmacion import ventana_confirmacion
+from herramientas.avisoctk import avisoctk
 from subprocess import Popen, PIPE, STDOUT, run, CalledProcessError
 from customtkinter import filedialog
 from colorama import Fore, init
@@ -37,15 +39,27 @@ class GTerminal:
                 archivo.write(salida)
 
     def eliminar_virus(self, salida_clam):
-        confirmacion = input(traductor("Seguro de que deseas eliminar todos los archivos detectados como maliciosos? (s/n): "))
-        if confirmacion.strip().lower() == "s" or confirmacion.strip().lower() == "y":
+        def eliminar():
+            found = False
             for linea in salida_clam.split("\n"):
                 if "FOUND" in linea:
-                    malicioso = linea.split()[0][:-1]
+                    found = True
+                    malicioso = linea.split()[0][:-1] # [:-1] quita el : al final de la ruta del archivo
                     try:
-                        run(["pkexec", "rm", malicioso], check=True) # [:-1] quita el : al final de la ruta del archivo
+                        run(["pkexec", "rm", malicioso], check=True)
+                        avisoctk(traductor("ARCHIVO ELIMINADO: ") + malicioso, traducir=False)
                     except CalledProcessError:
-                        print(Fore.RED + traductor("ERROR: NO SE PUDO ELIMINAR EL ARCHIVO:") + malicioso)
+                        avisoctk(traductor("ERROR: NO SE PUDO ELIMINAR EL ARCHIVO:") + malicioso, traducir=False)
+            if found:
+                avisoctk("Todos los archivos maliciosos han sido eliminados.\nSe recomienda verificar.")
+            else:
+                avisoctk("No se encontraron archivos maliciosos.")
+
+        ventana_confirmacion("UASPL: ClamAV",
+        traductor("Seguro de que deseas eliminar todos los archivos detectados como maliciosos?"),
+        traductor("Sí"),
+        "No",
+        eliminar)
 
     def crear_interfaz(self):
         def tarea():
