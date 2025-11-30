@@ -44,6 +44,7 @@ args = {
     traductor("desactivar-servicios"): Servicio("disable").systemctl,
 }
 
+
 def main():
     try:
         for arg, funcion in args.items():
@@ -57,6 +58,7 @@ def main():
         print(traductor("No se ingresó ningún argumento."))
     except KeyboardInterrupt as e:
         print(e)
+
 
 if __name__ == "__main__":
     main()

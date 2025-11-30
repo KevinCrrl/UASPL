@@ -28,7 +28,7 @@ class Servicio:
     def systemctl(self):
         for servicio in self.nombres:
             try:
-                sb.run(["sudo", "systemctl"] + self.tipo.split() + [servicio], check=True)
+                sb.run(["pkexec", "systemctl"] + self.tipo.split() + [servicio], check=True)
             except sb.CalledProcessError:
                 print(f"Error ocurrido durante el servicio {servicio}")
 
@@ -51,7 +51,7 @@ Si se desea realizar un escaneo antivirus con ClamAV, se debe usar el modo gráf
 Use el programa uasplc (no integrado directamente en UASPL, pero sí desarrollado en conjunto bajo distintas licencias) para ejecutar escaneos en la terminal."""))
 
 def version():
-    print(traductor("UASPL Versión 2.0.0-beta3"))
+    print(traductor("UASPL Versión 2.0.0"))
 
 def firewall():
     GTerminal("UFW Status", ["pkexec", "ufw", "status", "verbose"], False).crear_interfaz()

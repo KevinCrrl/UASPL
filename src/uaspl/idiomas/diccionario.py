@@ -5,7 +5,7 @@ frases = {
     "detener-servicios": "stop-services",
     "iniciar-servicios": "start-services",
     "activar-servicios": "activate-services",
-    "desactivar-servicios": "deactivate-services",
+    "desactivar-servicios": "desactivate-services",
     "red-estado": "network-state",
     "ayuda": "help",
     "Reglas UFW": "UFW Rules",
@@ -13,7 +13,7 @@ frases = {
     "RKESCANEO": "RKSCAN",
     "Nueva Regla UFW": "New Rule UFW",
     "Escaneo ClamAV": "ClamAV Scan",
-    "UASPL Versión 2.0.0-beta3": "UASPL Version 2.0.0-beta3",
+    "UASPL Versión 2.0.0": "UASPL Version 2.0.0",
     "Menú de UASPL:": "UASPL Menu:",
     "No se ingresó ningún argumento.": "No argument was entered.",
     "Añadir Regla": "Add Rule",
@@ -63,7 +63,7 @@ status-services: Shows the status of the ClamAV services.
 stop-services: Stops the ClamAV services in the current session.
 start-services: Starts the ClamAV services in the current session.
 activate-services: Enables the ClamAV services to start with the system.
-deactivate-services: Disables the ClamAV services from starting with the system.
+desactivate-services: Disables the ClamAV services from starting with the system.
 
 If you want to perform an antivirus scan with ClamAV, you must use the graphical mode to provide the path to scan.
 
