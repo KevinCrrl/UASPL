@@ -15,8 +15,8 @@
     junto con este programa. Si no, consulte <https://www.gnu.org/licenses/>."""
 
 import customtkinter as ctk
-from herramientas.idioma import traductor
-from herramientas.gterminal import GTerminal
+from uaspl.herramientas.idioma import traductor
+from uaspl.herramientas.gterminal import GTerminal
 
 def ventanaufw():
     def nueva_regla():

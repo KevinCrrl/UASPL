@@ -15,11 +15,11 @@
     junto con este programa. Si no, consulte <https://www.gnu.org/licenses/>."""
 
 import customtkinter as ctk
-from herramientas.extensiones import ventana_extensiones
+from uaspl.herramientas.extensiones import ventana_extensiones
 from tkinter import PhotoImage
-from herramientas.ufwui import ventanaufw
-from herramientas.funciones import *
-from herramientas.idioma import traductor
+from uaspl.herramientas.ufwui import ventanaufw
+from uaspl.herramientas.funciones import *
+from uaspl.herramientas.idioma import traductor
 
 nombres = {
     traductor("Escaneo ClamAV"): escaneo,

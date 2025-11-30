@@ -14,8 +14,8 @@
     Debería haber recibido una copia de la Licencia Pública General GNU
     junto con este programa. Si no, consulte <https://www.gnu.org/licenses/>."""
 
-from idiomas.diccionario import frases
-from config.parser import config
+from uaspl.idiomas.diccionario import frases
+from uaspl.config.parser import config
 
 idioma = "espanol"
 

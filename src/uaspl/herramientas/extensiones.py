@@ -15,8 +15,8 @@
     junto con este programa. Si no, consulte <https://www.gnu.org/licenses/>."""
 
 from xdg.BaseDirectory import xdg_config_home, xdg_data_home
-from herramientas.idioma import traductor
-from herramientas.funciones import avisoctk
+from uaspl.herramientas.idioma import traductor
+from uaspl.herramientas.funciones import avisoctk
 import customtkinter as ctk
 import subprocess as sb
 import os

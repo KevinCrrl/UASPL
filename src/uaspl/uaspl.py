@@ -15,9 +15,9 @@
     junto con este programa. Si no, consulte <https://www.gnu.org/licenses/>."""
 
 import customtkinter as ctk
-from config.parser import config
-from herramientas.funciones import * # Esto también importa la función traductor()
-from herramientas.ctkui import ui
+from uaspl.config.parser import config
+from uaspl.herramientas.funciones import * # Esto también importa la función traductor()
+from uaspl.herramientas.ctkui import ui
 import sys
 import os
 

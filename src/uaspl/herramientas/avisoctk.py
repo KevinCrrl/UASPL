@@ -14,7 +14,7 @@
     Debería haber recibido una copia de la Licencia Pública General GNU
     junto con este programa. Si no, consulte <https://www.gnu.org/licenses/>."""
 
-from herramientas.idioma import traductor
+from uaspl.herramientas.idioma import traductor
 import customtkinter as ctk
 
 def avisoctk(mensaje, parent=None, traducir=True):

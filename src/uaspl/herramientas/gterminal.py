@@ -14,16 +14,13 @@
     Debería haber recibido una copia de la Licencia Pública General GNU
     junto con este programa. Si no, consulte <https://www.gnu.org/licenses/>."""
 
-from herramientas.idioma import traductor
-from herramientas.confirmacion import ventana_confirmacion
-from herramientas.avisoctk import avisoctk
+from uaspl.herramientas.idioma import traductor
+from uaspl.herramientas.confirmacion import ventana_confirmacion
+from uaspl.herramientas.avisoctk import avisoctk
 from subprocess import Popen, PIPE, STDOUT, run, CalledProcessError
 from customtkinter import filedialog
-from colorama import Fore, init
 import customtkinter as ctk
 import threading as thd
-
-init(autoreset=True)
 
 class GTerminal:
     def __init__(self, titulo, comando: list, isclam: bool):

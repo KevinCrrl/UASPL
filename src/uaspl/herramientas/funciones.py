@@ -15,13 +15,10 @@
     junto con este programa. Si no, consulte <https://www.gnu.org/licenses/>."""
 
 import subprocess as sb
-from herramientas.avisoctk import avisoctk
-from herramientas.idioma import traductor
-from herramientas.gterminal import GTerminal
-from colorama import init, Fore
+from uaspl.herramientas.avisoctk import avisoctk
+from uaspl.herramientas.idioma import traductor
+from uaspl.herramientas.gterminal import GTerminal
 import customtkinter as ctk
-
-init(autoreset=True) # Esto hace que la consola no quede toda del color que seleccioné para una sola línea. 
 
 class Servicio:
     def __init__(self, tipo):
@@ -33,7 +30,7 @@ class Servicio:
             try:
                 sb.run(["sudo", "systemctl"] + self.tipo.split() + [servicio], check=True)
             except sb.CalledProcessError:
-                print(Fore.RED + f"Error ocurrido durante el servicio {servicio}")
+                print(f"Error ocurrido durante el servicio {servicio}")
 
 def ayuda():
     print(traductor("""Argumentos disponibles:
