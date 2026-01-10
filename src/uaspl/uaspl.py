@@ -1,5 +1,5 @@
 """
-    Copyright (C) 2025 KevinCrrl
+    Copyright (C) 2025-2026 KevinCrrl
 
     Este programa es software libre: puedes redistribuirlo y/o modificarlo
     está bajo los términos de la Licencia Pública General GNU publicada por
@@ -16,7 +16,15 @@
 
 import customtkinter as ctk
 from uaspl.config.parser import config
-from uaspl.herramientas.funciones import * # Esto también importa la función traductor()
+from uaspl.herramientas.funciones import  (
+    traductor,
+    firewall,
+    rkescaneo,
+    Servicio,
+    ayuda,
+    version,
+    escaneo
+)
 from uaspl.herramientas.ctkui import ui
 import sys
 import os
@@ -30,6 +38,7 @@ if os.getuid() == 0:
 ctk.set_appearance_mode(config["tema"])
 
 args = {
+    traductor("escaneo"): escaneo,
     traductor("red-estado"): firewall,
     "anti-rk": rkescaneo,
     "gui": ui,

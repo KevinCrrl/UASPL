@@ -1,3 +1,5 @@
+# KevinCrrl; LICENSE: GPL-3-or-later
+
 frases = {
     "full-iniciar-servicios": "full-start-services",
     "full-detener-servicios": "full-stop-services",
@@ -6,6 +8,7 @@ frases = {
     "iniciar-servicios": "start-services",
     "activar-servicios": "activate-services",
     "desactivar-servicios": "desactivate-services",
+    "escaneo": "scan",
     "red-estado": "network-state",
     "ayuda": "help",
     "Reglas UFW": "UFW Rules",
@@ -13,7 +16,7 @@ frases = {
     "RKESCANEO": "RKSCAN",
     "Nueva Regla UFW": "New Rule UFW",
     "Escaneo ClamAV": "ClamAV Scan",
-    "UASPL Versión 2.0.0": "UASPL Version 2.0.0",
+    "UASPL Versión 2.1.0": "UASPL Version 2.1.0",
     "Menú de UASPL:": "UASPL Menu:",
     "No se ingresó ningún argumento.": "No argument was entered.",
     "Añadir Regla": "Add Rule",
@@ -32,9 +35,11 @@ frases = {
     "Sí": "Yes",
     "Todos los archivos maliciosos han sido eliminados.\nSe recomienda verificar.": "All infected files have been deleted.\nIt is recommended to verify.",
     "No se encontraron archivos maliciosos.": "No infected files were found.",
+    "Error ocurrido: ": "Error ocurred: ",
 
 # ================= MENU DE AYUDA ==================================
     """Argumentos disponibles:
+escaneo: Escaneo ClamAV
 red-estado: Consulta y muestra el estado y las reglas del firewall UFW en una interfaz gráfica.
 anti-rk: Realiza un escaneo en busca de modificaciones malintencionadas y rootkits en una interfaz gráfica.
 gui: Muestra el menú principal del programa donde se pueden llamar otras interfaces.
@@ -47,12 +52,11 @@ iniciar-servicios: Inicia los servicios de ClamAV en la sesión actual.
 activar-servicios: Activa los servicios de ClamAV para que inicien con el sistema.
 desactivar-servicios: Desactiva los servicios de ClamAV para que no inicien con el sistema.
 
-Si se desea realizar un escaneo antivirus con ClamAV, se debe usar el modo gráfico para dar la ruta a escanear.
-
 Use el programa uasplc (no integrado directamente en UASPL, pero sí desarrollado en conjunto bajo distintas licencias) para ejecutar escaneos en la terminal.""":
 
 # ================= MENU DE AYUDA ==================================
     """Available arguments:
+scan: ClamAV Scan
 network-state: Checks and displays the status and rules of the UFW firewall in a graphical interface.
 anti-rk: Performs a scan for malicious modifications and rootkits in a graphical interface.
 gui: Shows the main menu of the program where other interfaces can be called.
@@ -64,8 +68,6 @@ stop-services: Stops the ClamAV services in the current session.
 start-services: Starts the ClamAV services in the current session.
 activate-services: Enables the ClamAV services to start with the system.
 desactivate-services: Disables the ClamAV services from starting with the system.
-
-If you want to perform an antivirus scan with ClamAV, you must use the graphical mode to provide the path to scan.
 
 Use the uasplc program (not directly integrated into UASPL, but developed in conjunction under different licenses) to run scans in the terminal.""",
 }
