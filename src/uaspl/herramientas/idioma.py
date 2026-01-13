@@ -8,7 +8,7 @@ idioma = "espanol"
 if config["idioma"] == "english":
     idioma = "english"
 
-def traductor(frase):
+def traductor(frase, diccionario=frases):
     if idioma == "english":
-        return frases[frase]
+        return diccionario[frase]
     return frase
