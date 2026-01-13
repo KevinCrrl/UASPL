@@ -14,6 +14,8 @@ class GTerminal:
         self.comando = comando
         self.isclam = isclam
         self.salida_acumulada = ""
+        self.maliciosos = []
+        self.found = False
 
     def guardar_salida(self, salida):
         archivo = filedialog.asksaveasfilename(defaultextension=".txt", filetypes=[("Text files", "*.txt")])
@@ -21,25 +23,25 @@ class GTerminal:
             with open(archivo, "w", encoding="utf-8") as archivo:
                 archivo.write(salida)
 
-    def eliminar_virus(self, salida_clam):
+    def eliminar_virus(self):
         def eliminar():
-            found = False
-            for linea in salida_clam.split("\n"):
-                if "FOUND" in linea:
-                    found = True
-                    malicioso = linea.split()[0][:-1] # [:-1] quita el : al final de la ruta del archivo
-                    try:
-                        run(["pkexec", "rm", malicioso], check=True)
-                        avisoctk(traductor("ARCHIVO ELIMINADO: ") + malicioso, traducir=False)
-                    except CalledProcessError:
-                        avisoctk(traductor("ERROR: NO SE PUDO ELIMINAR EL ARCHIVO:") + malicioso, traducir=False)
-            if found:
+            try:
+                run(["pkexec", "rm"] + self.maliciosos, check=True)
+            except CalledProcessError as e:
+                avisoctk(traductor("Error ocurrido") + "\n" + str(e), traducir=False)
+            if self.found:
                 avisoctk("Todos los archivos maliciosos han sido eliminados.\nSe recomienda verificar.")
             else:
                 avisoctk("No se encontraron archivos maliciosos.")
+        
+        for linea in self.salida_acumulada.split("\n"):
+            if "FOUND" in linea:
+                self.found = True
+                malicioso = linea.split(":")[0] # Eliminar la etiqueta de malware para quedarse solo con el archivo
+                self.maliciosos.append(malicioso)
 
         ventana_confirmacion("UASPL: ClamAV",
-        traductor("Seguro de que deseas eliminar todos los archivos detectados como maliciosos?"),
+        traductor("Seguro de que deseas eliminar todos los archivos detectados como maliciosos?") + "\n" + str(self.maliciosos),
         traductor("Sí"),
         "No",
         eliminar)
@@ -73,7 +75,7 @@ class GTerminal:
         guardar.pack(pady=10, padx=10, side="left")
 
         if self.isclam:
-            eliminar = ctk.CTkButton(root, text=traductor("Eliminar Virus Detectados"), command=lambda: self.eliminar_virus(self.salida_acumulada))
+            eliminar = ctk.CTkButton(root, text=traductor("Eliminar Virus Detectados"), command=self.eliminar_virus)
             eliminar.pack(pady=10, side="left")
 
         root.mainloop()
