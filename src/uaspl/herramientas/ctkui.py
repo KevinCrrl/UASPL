@@ -6,6 +6,7 @@ from tkinter import PhotoImage
 from uaspl.herramientas.ufwui import ventanaufw
 from uaspl.herramientas.funciones import *
 from uaspl.herramientas.idioma import traductor
+from os.path import exists
 
 nombres = {
     traductor("Escaneo ClamAV"): escaneo,
@@ -18,8 +19,10 @@ nombres = {
 def ui():
     root = ctk.CTk()
     root.title("UASPL GUI")
-    # True para que sea el ícono en todas las demás ventanas
-    root.iconphoto(True, PhotoImage(file='/usr/share/icons/hicolor/48x48/apps/UASPL.png'))
+    png_path = '/usr/share/icons/hicolor/48x48/apps/UASPL.png'
+    if exists(png_path):
+        # True para que sea el ícono en todas las demás ventanas
+        root.iconphoto(True, PhotoImage(file=png_path))
 
     root.geometry("300x220")
     root.resizable(False, False)

@@ -3,16 +3,14 @@
 # UASPL Comandos, Autor: KevinCrrl, LICENCIA: MIT
 # El software se proporciona "tal cual", sin garantía de ningún tipo. 
 # El autor no se hace responsable de daños derivados de su uso. (Vea la licencia MIT para más detalles)
-# Este archivo se puede usar de manera individual o junto a UASPL (Para ser usado por UASPL se debe ubicar este archivo en /usr/bin con el nombre uasplc sin extensión)
+# Este archivo se puede usar de manera individual o junto a UASPL
 # No lleva la licencia GPLv3 de UASPL ya que UASPL lo llama a través de subprocess.Popen, por ende no aplica el copyleft, además su creador (KevinCrrl) considera la licencia MIT más apta para un script pequeño como este.
 
-set -u
-set -e
+set -ue
 
 clam() {
-    case "$1" in
-        /|~|/*|~/*)
-            cat <<'EOF'
+    if [ -e "$1" ]; then # Validar ruta
+        cat <<'EOF'
   ____ _                    ___     __
  / ___| | __ _ _ __ ___    / \ \   / /
 | |   | |/ _` | '_ ` _ \  / _ \ \ / / 
@@ -20,14 +18,12 @@ clam() {
  \____|_|\__,_|_| |_| |_/_/   \_\_/
 
 EOF
-            freshclam
-            clamscan -r "$1"
-            ;;
-        *)
-            echo "Por favor revise la ruta ingresada, parece no tener estilo de ruta válida."
-            echo "Please review the path you entered, it doesn't appear to have a valid path style."
-            ;;
-    esac
+        freshclam
+        clamscan -r "$1"
+    else
+        echo "Por favor revise la ruta ingresada, parece no tener estilo de ruta válida o simplemente no existe."
+        echo "Please review the path you entered, it doesn't appear to have a valid path style or simply does not exist."
+    fi
 }
 
 rk() {
