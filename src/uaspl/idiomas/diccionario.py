@@ -16,7 +16,7 @@ frases = {
     "RKESCANEO": "RKSCAN",
     "Nueva Regla UFW": "New Rule UFW",
     "Escaneo ClamAV": "ClamAV Scan",
-    "UASPL Versión 2.1.0": "UASPL Version 2.1.0",
+    "UASPL Versión 2.1.1": "UASPL Version 2.1.1",
     "Menú de UASPL:": "UASPL Menu:",
     "No se ingresó ningún argumento.": "No argument was entered.",
     "Añadir Regla": "Add Rule",

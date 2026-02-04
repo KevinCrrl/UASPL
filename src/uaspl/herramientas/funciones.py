@@ -13,7 +13,7 @@ class Servicio:
 
     def systemctl(self):
         try:
-            sb.run(["pkexec", "syste", self.tipo] + self.servicios, check=True)
+            sb.run(["pkexec", "systemctl", self.tipo] + self.servicios, check=True)
         except sb.CalledProcessError as e:
             print(traductor("Error ocurrido: ") + str(e))
 
@@ -35,7 +35,7 @@ desactivar-servicios: Desactiva los servicios de ClamAV para que no inicien con 
 Use el programa uasplc (no integrado directamente en UASPL, pero sí desarrollado en conjunto bajo distintas licencias) para ejecutar escaneos en la terminal."""))
 
 def version():
-    print(traductor("UASPL Versión 2.1.0"))
+    print(traductor("UASPL Versión 2.1.1"))
 
 def firewall():
     GTerminal("UFW Status", ["pkexec", "ufw", "status", "verbose"], False).crear_interfaz()
