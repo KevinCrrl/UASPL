@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "uaspl"
-version = "2.0.0"
+version = "2.1.1"
 authors = [
   { name="KevinCrrl" },
 ]
@@ -13,7 +13,7 @@ requires-python = ">=3.8"
 classifiers = [
     "Programming Language :: Python :: 3",
 ]
-license = {text = "GPL-3.0-or-later"}
+license = "GPL-3.0-or-later"
 dependencies = [
     "pyxdg>=0.26",
     "jsonschema>=4.22.0",
